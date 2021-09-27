@@ -26,6 +26,8 @@ public class GetLondonUKWeather {
         .then()
                 .statusCode(200)
                 .assertThat().body("name", equalTo(city))
+                .assertThat().body("sys.country", equalTo("GB"))
+                .log().all()
         ;
     }
 }
